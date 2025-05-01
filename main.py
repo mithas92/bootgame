@@ -41,10 +41,14 @@ def main():
             if event.type == pygame.QUIT:
                 return
                
-        updatable.update(dt)                 # player1.update(dt)
+        updatable.update(dt)                 # This is updating everything. 
         for ast in asteroids:
             if player1.collision(ast):
                sys.exit("Game over!")
+            for sh in shots:
+                if ast.collision(sh):
+                    sh.kill()
+                    ast.kill()
 
         screen.fill(color="black")
         for pl in drawable:
