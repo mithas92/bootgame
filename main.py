@@ -48,7 +48,7 @@ def main():
             for sh in shots:
                 if ast.collision(sh):
                     sh.kill()
-                    ast.kill()
+                    ast.split()
 
         screen.fill(color="black")
         for pl in drawable:
